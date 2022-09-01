@@ -28,26 +28,33 @@
 // Add code to Github
 // Record a video of your light sequence
 
-int pinArray[] = {2, 3, 4, 5, 6, 7};
-int count = 0;
+int pinArray[] = {9, 8, 7, 6, 5, 4, 3, 2};
+int count = 9;
 
 
 // the setup function runs once when you press reset or power the board
 void setup() {
   // initialize digital pin LED_BUILTIN as an output.
-for (count=0;count<6;count++) {
+  for (count = 2; count < 8; count++) {
     pinMode(pinArray[count], OUTPUT);
   }
-  
+
 }
 
 // the loop function runs over and over again forever
 void loop() {
   
-  for(count=0;count<6;count++){
-  digitalWrite(count, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(100);                       // wait for half a second
-  digitalWrite(count, LOW);    // turn the LED off by making the voltage LOW
-                   // wait for half a second
-}
+  
+
+  for (count = 2; count < 8; count++) {
+    digitalWrite(pinArray[count], HIGH);   // turn the LED on (HIGH is the voltage level)
+    delay(100);                       // wait for half a second
+    digitalWrite(pinArray[count], LOW);    // turn the LED off by making the voltage LOW
+    // wait for half a second
+  }
+  for (count = 8; count >= 2; count--) {
+    digitalWrite(pinArray[count], HIGH);   // turn the LED on (HIGH is the voltage level)
+    delay(100);                       // wait for half a second
+    digitalWrite(pinArray[count], LOW); 
+  }
 }
